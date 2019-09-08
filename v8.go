@@ -14,8 +14,10 @@ package v8
 // #include <stdlib.h>
 // #include <string.h>
 // #include "v8_c_bridge.h"
-// #cgo CXXFLAGS: -I${SRCDIR} -I${SRCDIR}/include -fno-rtti -fpic -std=c++11
-// #cgo LDFLAGS: -pthread -L${SRCDIR}/libv8 -lv8_base -lv8_init -lv8_initializers -lv8_libbase -lv8_libplatform -lv8_libsampler -lv8_nosnapshot
+// #cgo darwin x86_64 CXXFLAGS: -I${SRCDIR} -I${SRCDIR}/platform/darwin_x86_64/include -fno-rtti -fpic -std=c++11
+// #cgo darwin x86_64 LDFLAGS: -pthread -L${SRCDIR}/platform/darwin_x86_64/lib -lv8_base -lv8_init -lv8_initializers -lv8_libbase -lv8_libplatform -lv8_libsampler -lv8_nosnapshot
+// #cgo linux x86_64 CXXFLAGS: -I${SRCDIR} -I${SRCDIR}/platform/linux_x86_64/include -fno-rtti -fpic -std=c++11
+// #cgo linux x86_64 LDFLAGS: -pthread -L${SRCDIR}/platform/linux_x86_64/lib -lv8_base -lv8_init -lv8_initializers -lv8_libbase -lv8_libplatform -lv8_libsampler -lv8_nosnapshot
 import "C"
 
 import (
